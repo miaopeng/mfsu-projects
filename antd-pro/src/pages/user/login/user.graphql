@@ -1,0 +1,18 @@
+query Me {
+  currentUser {
+    id
+    name
+  }
+}
+
+mutation SignMeIn($input: SignInInput!) {
+  signIn(input: $input) {
+    errors
+    token
+    user {
+      id
+      name
+      roles
+    }
+  }
+}

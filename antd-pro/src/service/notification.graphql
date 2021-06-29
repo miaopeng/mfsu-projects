@@ -1,0 +1,20 @@
+query Notifications {
+  birthdayUpcomingDealers {
+    id
+    name
+    principal {
+      id
+      name
+      birthday
+    }
+  }
+  variants(overInventory: true) {
+    nodes {
+      id
+      erpcode
+      displayTitle
+      inventoryQuantity
+      minInventoryQuantity
+    }
+  }
+}

@@ -1,0 +1,237 @@
+@import '~antd/es/style/themes/default.less';
+
+:root {
+  --color-green: #52c41a;
+  --color-red: #f5222d;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+// logo text
+.ant-pro-sider-menu-sider.light .ant-pro-sider-menu-logo h1 {
+  color: #555 !important;
+  font-weight: 200;
+}
+.ant-layout-sider-collapsed .ant-pro-sider-menu-logo {
+  padding-left: 0;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// set tree table styles
+.ant-table-row-level-1 {
+  font-size: 12px;
+}
+
+/**
+ * 修复在小分辨率下，header 的 extraContent 会错位
+ */
+@media screen and (max-width: 768px) {
+  .app-hawkeye .ant-pro-page-header-wrap-main .ant-pro-page-header-wrap-row {
+    display: flex;
+  }
+}
+
+// 兼容IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
+
+.app-hawkeye {
+  // top tabbar gap
+  .ant-page-header-content {
+    padding-top: 0;
+  }
+
+  // top tabbar gap
+  .ant-page-header-ghost {
+    padding-top: 0;
+    .ant-breadcrumb {
+      padding-top: 12px;
+    }
+  }
+  // top tabbar gap
+  .ant-page-header-footer {
+    margin-top: 0;
+  }
+
+  // top tab text
+  .ant-page-header-footer .ant-tabs .ant-tabs-tab {
+    font-size: 14px;
+  }
+
+  .ant-pro-top-nav-header-main-left {
+    min-width: 80px;
+  }
+
+  // logo image
+  .ant-pro-top-nav-header-logo img {
+    width: 90px;
+    height: auto;
+    margin-top: -12px;
+  }
+
+  .ant-rate {
+    color: #996;
+  }
+  .ant-table .ant-rate {
+    font-size: 13px;
+  }
+  .ant-tabs-extra-content {
+    line-height: 36px;
+  }
+
+  .ant-table-small .ant-table {
+    font-size: 12px;
+  }
+
+  // sticky table summary row
+  .ant-table-summary,
+  .ant-table-summary tr,
+  .ant-table-summary td {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
+  }
+  .ant-table-summary td:first-child,
+  .ant-table-summary td:last-child,
+  .ant-table-summary td.summary-cell {
+    z-index: 3;
+  }
+
+  /* Fix */
+  .ant-table-ping-left .ant-table-cell-fix-left-first::after,
+  .ant-table-ping-left .ant-table-cell-fix-left-last::after {
+    box-shadow: inset 10px 0 8px -7px rgba(0, 0, 0, 0.15);
+  }
+  .ant-table-ping-right .ant-table-cell-fix-right-first:after,
+  .ant-table-ping-right .ant-table-cell-fix-right-last:after {
+    box-shadow: inset -10px 0 8px -7px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Fix horizontal menu not collapsed bug, start */
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+    margin: 0; // rc-menu using item width to calculate menu width, so dont set item margins
+    margin-top: -1px;
+    margin-bottom: 0;
+    padding: 0 20px;
+  }
+
+  .ant-menu-horizontal > .ant-menu-item {
+    padding: 0;
+    border-bottom: 0;
+  }
+  .ant-menu-horizontal .ant-menu-submenu-title {
+    padding: 0;
+    border-bottom: 2px solid transparent;
+  }
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover {
+    border-bottom: 0;
+    .ant-menu-submenu-title {
+      color: #1890ff;
+      border-bottom: 2px solid #1890ff;
+    }
+  }
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected {
+    border-bottom: 0;
+    .ant-menu-submenu-title {
+      border-bottom: 2px solid #1890ff;
+    }
+  }
+  /* Fix horizontal menu not collapsed bug, end */
+}
+
+.pic {
+  display: inline-block;
+  background-color: #f7f7f7;
+  border: 1px solid #eee;
+  user-select: none;
+}
+
+.product-pic {
+  .pic();
+  width: 100px;
+  height: 100px;
+}
+.variant-pic {
+  .pic();
+  width: 40px;
+  height: 40px;
+}
+
+.section-title {
+  margin: 0;
+  padding: 20px 0;
+  color: rgba(69, 90, 100, 0.6);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.safe-bottom {
+  padding-bottom: 68px;
+}
+
+.img {
+  display: inline-block;
+  background-color: #f7f7f7;
+  border: 1px solid #eee;
+  user-select: none;
+}
+.img-sm {
+  .img();
+  width: 40px;
+  height: 40px;
+}
+
+.linkmate {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}

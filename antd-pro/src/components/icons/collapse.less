@@ -1,0 +1,24 @@
+.buttonCollapse {
+  cursor: pointer;
+  font-size: 24px;
+  position: relative;
+  top: 3px;
+  opacity: 0.8;
+  transition: stroke-dasharray 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, stroke-dasharray 0.2s ease-out;
+  margin-left: 4px;
+
+  &.open {
+    transform: translate3d(0, -3px, 0) rotate(-90deg);
+    path {
+      stroke-dasharray: 14;
+    }
+  }
+
+  path {
+    stroke-width: 2px;
+    stroke-dasharray: 7;
+    stroke-dashoffset: 1;
+    transition: stroke-dasharray 0.2s ease;
+  }
+}
