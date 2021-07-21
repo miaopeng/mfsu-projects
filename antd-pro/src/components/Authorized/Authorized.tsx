@@ -1,5 +1,4 @@
 import React from 'react';
-import { Page403 } from '@/components/Exception';
 import check, { IAuthorityType } from './CheckPermissions';
 
 import AuthorizedRoute from './AuthorizedRoute';
@@ -19,7 +18,7 @@ type IAuthorizedType = React.FunctionComponent<AuthorizedProps> & {
 const Authorized: React.FunctionComponent<AuthorizedProps> = ({
   children,
   authority,
-  noMatch = <Page403 />,
+  noMatch = <div>403</div>,
 }) => {
   const childrenRender: React.ReactNode = typeof children === 'undefined' ? null : children;
   const dom = check(authority, childrenRender, noMatch);

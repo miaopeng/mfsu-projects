@@ -35,38 +35,7 @@ const webpackPlugin = (config: IWebpackChainConfig) => {
     .exclude.add(/\.(graphql|gql)$/)
     .end();
 
-  // optimize chunks
-  config.optimization
-    // share the same chunks across different modules
-    .runtimeChunk(false)
-    .splitChunks({
-      chunks: 'async',
-      name: 'vendors',
-      maxInitialRequests: Infinity,
-      minSize: 0,
-      cacheGroups: {
-        vendors: {
-          test: (module: { context: string }) => {
-            const packageName = getModulePackageName(module) || '';
-            if (packageName) {
-              return ['bizcharts', 'g6', '@antv', 'l7', 'bizcharts-plugin-slider'].includes(
-                packageName,
-              );
-            }
-            return false;
-          },
-          name(module: { context: string }) {
-            const packageName = getModulePackageName(module);
-            if (packageName) {
-              if (['bizcharts', '@antv_data-set'].indexOf(packageName) >= 0) {
-                return 'viz'; // visualization package
-              }
-            }
-            return 'misc';
-          },
-        },
-      },
-    });
+  // config.module.rule('mjs-rule').test(/.m?js/).resolve.set('fullySpecified', false);
 };
 
 export default webpackPlugin;

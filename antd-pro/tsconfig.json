@@ -22,5 +22,16 @@
       "@@/*": ["./src/.umi/*"]
     }
   },
-  "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
+  "exclude": [
+    ".umi",
+    ".umi-production",
+    ".mfsu-production",
+    "node_modules",
+    "build",
+    "dist",
+    "scripts",
+    "src/.umi/*",
+    "webpack",
+    "jest"
+  ]
 }

@@ -1,10 +1,18 @@
 module.exports = {
+  root: true,
   extends: [require.resolve('@umijs/fabric/dist/eslint')],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2018,
+    project: 'antd-pro/tsconfig.json',
+    sourceType: 'module',
+    createDefaultProgram: true,
+  },
   globals: {
     REACT_APP_ENV: true,
   },
   rules: {
-    camelcase: 0,
+    camelcase: 1,
     'global-require': 0,
     'no-bitwise': ['error', { allow: ['~'] }],
     'no-console': 0,

@@ -7,7 +7,7 @@
 _roadhog-api-doc
 
 # production
-/dist
+/public
 /.vscode
 
 # misc
@@ -30,6 +30,7 @@ functions/*
 # umi
 .umi
 .umi-production
+.mfsu-production
 
 # screenshot
 screenshot

@@ -32,18 +32,10 @@ export default defineConfig({
   // fastRefresh: {},
   mfsu: { production: { output: '.mfsu-production' } },
   webpack5: {},
-  scripts:
-    process.env.NODE_ENV === 'development'
-      ? [
-          `http://localhost:${PORT}/libs/react/16.13.1/react.development.js`,
-          `http://localhost:${PORT}/libs/react-dom/16.13.1/react-dom.development.js`,
-          `http://localhost:${PORT}/libs/bizcharts/4.1.10/BizCharts.js`,
-        ]
-      : [
-          'https://eagle.guanyun.cn/libs/react/16.13.1/react.production.min.js',
-          'https://eagle.guanyun.cn/libs/react-dom/16.13.1/react-dom.production.min.js',
-          'https://eagle.guanyun.cn/libs/bizcharts/4.1.10/BizCharts.min.js',
-        ],
+  scripts: [
+    `http://localhost:${PORT}/libs/react/16.13.1/react.development.js`,
+    `http://localhost:${PORT}/libs/react-dom/16.13.1/react-dom.development.js`,
+  ],
   targets: {
     ie: 11,
   },
@@ -51,45 +43,7 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      component: '../layouts/BlankLayout',
-      routes: [
-        {
-          path: '/user',
-          component: '../layouts/UserLayout',
-          routes: [
-            {
-              path: '/user',
-              redirect: '/user/login',
-            },
-            {
-              name: 'login',
-              path: '/user/login',
-              component: './user/login',
-            },
-            {
-              component: '404',
-            },
-          ],
-        },
-        {
-          path: '/',
-          component: '../layouts/SecurityLayout',
-          routes: [
-            {
-              path: '/',
-              component: '../layouts/BasicLayout',
-              Routes: ['src/pages/Authorized'],
-              authority: ['sa', 'admin', 'operation', 'sales'],
-              routes: [
-                {
-                  path: '/',
-                  component: './welcome',
-                },
-              ],
-            },
-          ],
-        },
-      ],
+      component: './welcome',
     },
   ],
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
