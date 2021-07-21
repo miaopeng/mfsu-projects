@@ -4,30 +4,10 @@
   "private": true,
   "description": "",
   "scripts": {
-    "analyze": "cross-env ANALYZE=1 umi build",
     "build": "umi build",
     "dev": "npm run start:dev",
-    "deploy": "cd .. && bundle exec mina deploy",
-    "lint": "umi g tmp && npm run lint:js && npm run lint:style && npm run lint:prettier",
-    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
-    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
-    "lint:prettier": "prettier --check \"**/*\" --end-of-line auto",
-    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
-    "prettier": "prettier -c --write \"**/*\"",
-    "puma:start": "cd .. && bundle exec mina puma:start",
-    "puma:stop": "cd .. && bundle exec mina puma:stop",
-    "mock": "cd mock_apollo && nodemon apollo_server.js",
     "start": "cross-env UMI_UI=none umi dev",
-    "start:no-mock": "cross-env MOCK=none umi dev",
-    "start:no-ui": "cross-env UMI_UI=none umi dev",
-    "start:dev": "cross-env REACT_APP_ENV=dev MOCK=none UMI_UI=none umi dev",
-    "start:prod": "cross-env REACT_APP_ENV=prod MOCK=none UMI_UI=none umi dev",
-    "start:mock": "cross-env REACT_APP_ENV=mock MOCK=none UMI_UI=none umi dev",
-    "test": "umi test",
-    "test:all": "node ./tests/run-tests.js",
-    "test:component": "umi test ./src/components",
-    "tsc": "tsc",
-    "g": "dip rake graphql:schema:idl && graphql-codegen --config codegen.yml"
+    "tsc": "tsc"
   },
   "browserslist": [
     "> 1%",
@@ -35,10 +15,8 @@
     "not ie <= 10"
   ],
   "dependencies": {
-    "@ant-design/pro-layout": "^6.20.0",
     "@babel/runtime": "7.14.6",
     "@umijs/preset-react": "^1.8.14",
-    "antd": "4.16.6",
     "history": "^4.10.1",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
