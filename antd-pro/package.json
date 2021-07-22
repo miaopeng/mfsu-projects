@@ -23,7 +23,7 @@
     "path-to-regexp": "6.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "umi": "^3.5.13"
+    "umi": "3.5.12"
   },
   "devDependencies": {
     "@types/history": "^4.7.8",
