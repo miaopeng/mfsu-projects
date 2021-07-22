@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "umi": "^3.5.12"
+    "umi": "^3.5.13"
   }
 }
