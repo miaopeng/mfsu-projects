@@ -1,7 +1,6 @@
 import { Button, message, notification } from 'antd';
 import React from 'react';
 import defaultSettings from '../config/defaultSettings';
-import '@/utils/persist';
 
 const { pwa } = defaultSettings; // if pwa is true
 
@@ -81,12 +80,4 @@ if (pwa) {
   serviceWorker.getRegistration().then((sw) => {
     if (sw) sw.unregister();
   }); // remove all caches
-
-  if (window.caches && window.caches.keys) {
-    caches.keys().then((keys) => {
-      keys.forEach((key) => {
-        caches.delete(key);
-      });
-    });
-  }
 }

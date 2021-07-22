@@ -25,7 +25,7 @@ export default defineConfig({
     'react-dom': 'window.ReactDOM',
   },
   // fastRefresh: {},
-  // mfsu: { production: { output: '.mfsu-production' } },
+  mfsu: { production: { output: '.mfsu-production' } },
   webpack5: {},
   scripts: [
     `http://localhost:${PORT}/libs/react/16.13.1/react.development.js`,

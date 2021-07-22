@@ -1,6 +1,6 @@
 import RenderAuthorize from '@/components/Authorized';
 import { getAuthority } from './authority';
-/* eslint-disable eslint-comments/disable-enable-pair */
+
 /* eslint-disable import/no-mutable-exports */
 let Authorized = RenderAuthorize(getAuthority());
 
@@ -13,7 +13,7 @@ const reloadAuthorized = (): void => {
  * hard code
  * block need it。
  */
-window.reloadAuthorized = reloadAuthorized;
+// window.reloadAuthorized = reloadAuthorized;
 
 export { reloadAuthorized };
 export default Authorized;
